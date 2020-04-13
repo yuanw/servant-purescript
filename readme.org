@@ -1,8 +1,8 @@
 #+TITLE: Haskell Nix Template
 
 
-https://raw.githubusercontent.com/NixOS/nixpkgs/master/pkgs/development/haskell-modules/hackage-packages.nix
-https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/haskell-modules/hackage-packages.nix
+Build a docker image locally
 
-~cachix use pre-commit-hooks~
-https://github.com/cachix/pre-commit-hooks.nix
+
+https://github.com/knative/docs/tree/175313457f94baa036b400f12d162157edef70a7/community/samples/serving/helloworld-haskell
+

@@ -13,7 +13,7 @@ let
   pkgs = import src {};
   myHaskellPackages = pkgs.haskell.packages."${compiler}";
 
-  # myPackages = myHaskellPackages.callCabal2nix "project" ./blog.cabal {};
+  myPackages = myHaskellPackages.callCabal2nix "project" ./servant-purescript.cabal {};
 in
 myHaskellPackages.shellFor {
   withHoogle = true;
@@ -26,6 +26,5 @@ myHaskellPackages.shellFor {
       cabal2nix
       ormolu
       cabal-install
-      cabal-fmt
     ];
 }
