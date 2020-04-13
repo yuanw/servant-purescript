@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 89441c178c904a0af31611ec0d83b8042059cea93a3fa42199169ea260db0b18
+-- hash: 1ea2cba91621c2a30dfaf4ad6ede5596e74dc33543fcf5d6893f03b0ebdbc49d
 
 name:          servant-purescript
 version:       0.0.0
