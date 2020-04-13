@@ -4,10 +4,22 @@ let
 
   nixpkgs = builtins.fromJSON (builtins.readFile ./nixpkgs.json);
 
+  pspkgs = builtins.fromJSON (builtins.readFile ./purescript.json);
+
   src = bootstrap.fetchFromGitHub {
     owner = "NixOS";
     repo = "nixpkgs";
     inherit (nixpkgs) rev sha256;
+  };
+
+  easy-ps = import (
+    pkgs.fetchFromGitHub {
+      owner = "justinwoo";
+      repo = "easy-purescript-nix";
+      inherit (pspkgs) rev sha256;
+    }
+  ) {
+    inherit pkgs;
   };
 
   pkgs = import src {};
@@ -28,5 +40,10 @@ myHaskellPackages.shellFor {
       cabal-install
     ] ++ [
       pkgs.zlib
+      easy-ps.purs
+      easy-ps.spago
+      easy-ps.spago2nix
+      pkgs.cacert
+      pkgs.nodejs
     ];
 }
