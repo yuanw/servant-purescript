@@ -26,5 +26,7 @@ myHaskellPackages.shellFor {
       cabal2nix
       ormolu
       cabal-install
+    ] ++ [
+      pkgs.zlib
     ];
 }
