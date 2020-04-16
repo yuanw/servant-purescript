@@ -6,3 +6,7 @@ Build a docker image locally
 
 https://github.com/knative/docs/tree/175313457f94baa036b400f12d162157edef70a7/community/samples/serving/helloworld-haskell
 
+parcel build frontend/index.html
+
+
+https://www.stackbuilders.com/tutorials/functional-full-stack/purescript-bridge/

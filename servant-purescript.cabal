@@ -4,13 +4,14 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 1ea2cba91621c2a30dfaf4ad6ede5596e74dc33543fcf5d6893f03b0ebdbc49d
+-- hash: 30508f493da41763a41ec819643ad9526dc2cbf6dea5a1a066252e489c6d15db
 
 name:          servant-purescript
 version:       0.0.0
 build-type:    Simple
 
 library
+  exposed-modules:    ApiType
   other-modules:      Paths_servant_purescript
   hs-source-dirs:     src
   default-extensions: OverloadedStrings
@@ -38,9 +39,10 @@ executable servant-purescript-exe
 
   build-depends:
       aeson
-    , base            >=4.7 && <5
+    , base                >=4.7 && <5
     , containers
     , servant
+    , servant-purescript
     , servant-server
     , text
     , time

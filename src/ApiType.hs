@@ -3,18 +3,26 @@
 
 module ApiType where
 
-import Data.Text
-import Data.Time (UTCTime)
-import Servant.API
+import Data.Proxy ()
+import Servant
 
-type UserAPI = "users" :> QueryParam "sortby" SortBy :> Get '[JSON] [User]
-
-data SortBy = Age | Name
-
-data User
-  = User
-      { name :: String,
-        age :: Int,
-        email :: String,
-        registration_date :: UTCTime
+data Scientist
+  = Scientist
+      { sId :: Int,
+        sFirstName :: String,
+        sLastName :: String
       }
+  deriving (Eq, Show)
+
+--type UserAPI = "users" :> QueryParam "sortby" SortBy :> Get '[JSON] [User]
+--type MyApi = "static" :> Raw
+type MyApi = Raw
+
+server :: Server MyApi
+server = serveDirectory "dist"
+
+myAPI :: Proxy MyApi
+myAPI = Proxy
+
+app :: Application
+app = serve myAPI server

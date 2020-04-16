@@ -37,7 +37,6 @@ mkDerivation {
     time
     warp
   ];
-  doHaddock = false;
   prePatch = "hpack";
   license = "unknown";
   hydraPlatforms = stdenv.lib.platforms.none;

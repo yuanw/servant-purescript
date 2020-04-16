@@ -16,6 +16,7 @@ dependencies:
 
 default-extensions:
   - OverloadedStrings
+name: servant-purescript
 
 executables:
   servant-purescript-exe:
@@ -28,3 +29,5 @@ executables:
       - -O2
       - -flate-specialise
       - -fspecialise-aggressively
+    dependencies:
+      - servant-purescript

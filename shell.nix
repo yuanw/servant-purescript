@@ -29,7 +29,7 @@ let
 in
 myHaskellPackages.shellFor {
   withHoogle = true;
-  packages = p: [];
+  packages = p: [ myPackages ];
   inherit ((import ./pre-commit.nix).pre-commit-check) shellHook;
   buildInputs = with myHaskellPackages;
     [
