@@ -36,3 +36,9 @@ cabal.project.local~
 
 #cachix/pre-commit
 .pre-commit-config.yaml
+
+
+#js
+.cache
+node_modules
+package-lock.json

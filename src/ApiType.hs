@@ -1,27 +1,44 @@
 {-# LANGUAGE DataKinds #-}
+{-# LANGUAGE DeriveGeneric #-}
 {-# LANGUAGE TypeOperators #-}
 
 module ApiType where
 
+import Data.Aeson
+import Data.Aeson.Types
 import Data.Proxy ()
+import GHC.Generics
 import Servant
 
 data Scientist
   = Scientist
       { sId :: Int,
-        sFirstName :: String,
-        sLastName :: String
+        sName :: String
       }
-  deriving (Eq, Show)
+  deriving (Eq, Show, Generic)
 
---type UserAPI = "users" :> QueryParam "sortby" SortBy :> Get '[JSON] [User]
---type MyApi = "static" :> Raw
-type MyApi = Raw
+instance ToJSON Scientist
 
-server :: Server MyApi
-server = serveDirectory "dist"
+scientists :: [Scientist]
+scientists =
+  [ Scientist 1 "Isaac Newton",
+    Scientist 2 "Albert Einstein",
+    Scientist 3 "Gottfried Wilhelm Leibniz",
+    Scientist 4 "Stephen Hawking",
+    Scientist 5 "Pythagoras",
+    Scientist 6 "Wernher Von Braun"
+  ]
 
-myAPI :: Proxy MyApi
+type API =
+  "scientist" :> Get '[JSON] [Scientist]
+    :<|> Raw
+
+server :: Server API
+server =
+  pure scientists
+    :<|> serveDirectoryFileServer "dist"
+
+myAPI :: Proxy API
 myAPI = Proxy
 
 app :: Application
