@@ -10,13 +10,15 @@ dependencies:
   - containers
   - servant
   - servant-server
+  - servant-purescript
+  - purescript-bridge
   - text
   - time
   - warp
 
 default-extensions:
   - OverloadedStrings
-name: servant-purescript
+name: servant-purescript-example
 
 executables:
   servant-purescript-exe:
@@ -30,4 +32,18 @@ executables:
       - -flate-specialise
       - -fspecialise-aggressively
     dependencies:
-      - servant-purescript
+      - servant-purescript-example
+
+  generator:
+    source-dirs: generator
+    main: Main.hs
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+      - -O2
+      - -flate-specialise
+      - -fspecialise-aggressively
+    dependencies:
+      - lens
+      - servant-purescript-example

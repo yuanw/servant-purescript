@@ -3,6 +3,7 @@
 , base
 , containers
 , hpack
+, purescript-bridge
 , servant
 , servant-server
 , stdenv
@@ -20,6 +21,7 @@ mkDerivation {
     aeson
     base
     containers
+    purescript-bridge
     servant
     servant-server
     text
@@ -31,6 +33,7 @@ mkDerivation {
     aeson
     base
     containers
+    purescript-bridge
     servant
     servant-server
     text

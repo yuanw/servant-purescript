@@ -25,7 +25,7 @@ let
   pkgs = import src {};
   myHaskellPackages = pkgs.haskell.packages."${compiler}";
 
-  myPackages = myHaskellPackages.callCabal2nix "project" ./servant-purescript.cabal {};
+  myPackages = myHaskellPackages.callCabal2nix "servant-purescript-example" ./servant-purescript-example.cabal {};
 in
 myHaskellPackages.shellFor {
   withHoogle = true;
