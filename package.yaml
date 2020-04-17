@@ -10,8 +10,6 @@ dependencies:
   - containers
   - servant
   - servant-server
-  - servant-purescript
-  - purescript-bridge
   - text
   - time
   - warp
@@ -46,4 +44,8 @@ executables:
       - -fspecialise-aggressively
     dependencies:
       - lens
+      - servant
       - servant-purescript-example
+      - servant-server
+      - servant-purescript
+      - purescript-bridge

@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: ed64a6deefc12149afc3858e15393ab8233988d064b56807229d95ff1ec4b77e
+-- hash: 46df11ad77bbc21cc86b056caa0eda5535917bef761a4165fa73c2a0ae29fc97
 
 name:          servant-purescript-example
 version:       0.0.0
@@ -18,11 +18,9 @@ library
   ghc-options:        -Wall -Wno-name-shadowing
   build-depends:
       aeson
-    , base                >=4.7 && <5
+    , base            >=4.7 && <5
     , containers
-    , purescript-bridge
     , servant
-    , servant-purescript
     , servant-server
     , text
     , time
@@ -68,9 +66,7 @@ executable servant-purescript-exe
       aeson
     , base                        >=4.7 && <5
     , containers
-    , purescript-bridge
     , servant
-    , servant-purescript
     , servant-purescript-example
     , servant-server
     , text

@@ -1,12 +1,17 @@
-#+TITLE: Haskell Nix Template
+#+TITLE: Servant <-> Purescript Demo
 
+* Build purescript
+parcel build frontend/index.html
 
-Build a docker image locally
+* Haskell/Purescript integration
+
+- https://www.stackbuilders.com/tutorials/functional-full-stack/purescript-bridge/
+- https://github.com/eskimor/servant-purescript
+
+* GOAL
+** TODO Build a docker image locally
+** TODO deploy to google cloud run
 
 
 https://github.com/knative/docs/tree/175313457f94baa036b400f12d162157edef70a7/community/samples/serving/helloworld-haskell
 
-parcel build frontend/index.html
-
-
-https://www.stackbuilders.com/tutorials/functional-full-stack/purescript-bridge/
